@@ -3,13 +3,17 @@ import "./index.scss";
 import { Success } from "./components/Success";
 import { Users } from "./components/Users";
 
-// Тут список пользователей: https://reqres.in/api/users
+// Тут список пользователей: https://reqres.in/api/users?page=2
 
 function App() {
   const [users, setUsers] = useState([]);
   const [isLoading, setLoading] = useState(true);
   useEffect(() => {
-    fetch(`https://reqres.in/api/users?page=1`)
+    fetch("https://reqres.in/api/users?page=2", {
+      headers: {
+        "x-api-key": "reqres_1b60671178cb432e97f7a6fc53428bd0",
+      },
+    }) // ← Убрали ; и ,
       .then((res) => res.json())
       .then((json) => {
         setUsers(json.data);
@@ -20,6 +24,7 @@ function App() {
       })
       .finally(() => setLoading(false));
   }, []);
+
   return (
     <div className="App">
       <Users items={users || []} isLoading={isLoading} />
