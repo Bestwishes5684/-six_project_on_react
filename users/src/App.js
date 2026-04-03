@@ -9,7 +9,11 @@ function App() {
   const [users, setUsers] = useState([]);
   const [isLoading, setLoading] = useState(true);
   useEffect(() => {
-    fetch(`/api/users?page=2`)
+    fetch(`https://reqres.in/api/users?page=2`,{
+      headers: {
+        "x-api-key": "reqres_1b60671178cb432e97f7a6fc53428bd0",
+      },
+    }) 
       .then((res) => res.json())
       .then((json) => {
         setUsers(json.data);
