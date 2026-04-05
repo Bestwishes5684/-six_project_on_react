@@ -7,7 +7,7 @@ export const Success = ({ count }) => {
       <h3>Успешно!</h3>
       <p>Всем {count} пользователям отправлено приглашение.</p>
       <button
-        onClick={() => window.location.reload}
+        onClick={() => window.location.reload()}
         className="send-invite-btn"
       >
         Назад

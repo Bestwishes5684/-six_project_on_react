@@ -1,0 +1,14 @@
+const { createProxyMiddleware } = require("http-proxy-middleware");
+
+module.exports = function (app) {
+  app.use(
+    "/img",
+    createProxyMiddleware({
+      target: "https://reqres.in",
+      changeOrigin: true,
+      pathRewrite: {
+        "^/img": "/img/faces",
+      },
+    }),
+  );
+};
