@@ -13,7 +13,7 @@ function App() {
   const [success, setSuccess] = useState(false);
 
   useEffect(() => {
-    fetch(`https://reqres.in/api/users?page=2`, {
+    fetch(`/api/users?page=2`, {
       headers: {
         "x-api-key": "reqres_1b60671178cb432e97f7a6fc53428bd0",
       },

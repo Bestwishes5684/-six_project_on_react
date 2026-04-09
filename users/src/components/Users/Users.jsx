@@ -9,11 +9,15 @@ export const User = ({
   onClickInvate,
   isInvited,
 }) => (
-  
   <li>
     <div>
-      <img className="avatar" src={`/images/${id}-image.jpg`} alt="User"  referrerPolicy="no-referrer"/>
-      
+      <img
+        className="avatar"
+        src={`/img/faces/${id}-image.jpg`}
+        alt="User"
+        referrerPolicy="no-referrer"
+      />
+
       <div>
         <h3>
           {first_name} {last_name}
@@ -26,13 +30,12 @@ export const User = ({
         </p>
       </div>
     </div>
-    
+
     <img
       onClick={() => onClickInvate(id)}
       className="action"
       src={`/assets/${isInvited ? `minus` : `plus`}.svg`}
       alt="Action"
     />
-    
   </li>
 );
